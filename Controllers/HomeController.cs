@@ -1,32 +1,36 @@
 ﻿using ErrorPage.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Diagnostics;
 
-namespace ErrorPage.Controllers
+
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly ILogger<HomeController> _logger;
+
+    public HomeController(ILogger<HomeController> logger)
     {
-        private readonly ILogger<HomeController> _logger;
+        _logger = logger;
+    }
 
-        public HomeController(ILogger<HomeController> logger)
+    public IActionResult Index()
+    {
+        return View();
+    }
+
+    public IActionResult Privacy()
+    {
+        try
         {
-            _logger = logger;
+       
+            throw new Exception("An error occurred in the Privacy action.");
         }
-
-        public IActionResult Index()
+        catch (Exception ex)
         {
-            return View();
-        }
+           
+            _logger.LogError(ex, "An error occurred in the Privacy action.");
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [Route("Home/Error")]
-        public IActionResult Error()
-        {
             var errorViewModel = new ErrorViewModel
             {
                 RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
@@ -34,5 +38,16 @@ namespace ErrorPage.Controllers
 
             return View("_Error", errorViewModel);
         }
+    }
+
+    [Route("Home/Error")]
+    public IActionResult Error()
+    {
+        var errorViewModel = new ErrorViewModel
+        {
+            RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+        };
+
+        return View("_Error", errorViewModel);
     }
 }
