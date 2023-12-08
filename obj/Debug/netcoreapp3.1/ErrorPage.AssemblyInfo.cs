@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ErrorPage")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2d4a69bba40fb9790ba32543acc015db59cab42")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca97c88c3a113ba9c2057fbaad4310a4ab2afa83")]
 [assembly: System.Reflection.AssemblyProductAttribute("ErrorPage")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ErrorPage")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
