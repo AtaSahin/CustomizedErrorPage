@@ -23,13 +23,12 @@ public class HomeController : Controller
     {
         try
         {
-            // Burada Privacy işlemleri yapılır
-            // Örneğin, bir istisna fırlatılabilir
+       
             throw new Exception("An error occurred in the Privacy action.");
         }
         catch (Exception ex)
         {
-            // Hata durumunda loglama yapabilir ve özel hata sayfasına yönlendirme yapabilirsiniz
+           
             _logger.LogError(ex, "An error occurred in the Privacy action.");
 
             var errorViewModel = new ErrorViewModel
