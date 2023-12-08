@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <h1 class="display-4 text-danger">An error occurred</h1>
+            <p class="lead">We apologize for the inconvenience. Please try again later.</p>
+            <p>Reference ID: <strong>@ViewData["RequestId"]</strong></p>
+
+            <a class="btn btn-primary" href="/">Back to Home</a>
+        </div>
+    </div>
+</div>
